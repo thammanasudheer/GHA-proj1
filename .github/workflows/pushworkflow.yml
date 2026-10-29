@@ -3,6 +3,13 @@ on:
   push: 
     branches:
       - main
+  pull_request:
+    branches:
+      - main
+      - release-*
+  workflow_dispatch:
+  schedule:
+    - cron: '0 9 * * *' #runs at 9.00 
 jobs:
   first-job:
     runs-on: ubuntu-latest
